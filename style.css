@@ -174,3 +174,94 @@ body {
         opacity: 0;
     }
 }
+
+/* small clock  */
+
+.small_clock {
+    width: 230px;
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #c9d5e0;
+    box-shadow: 45px 45px 45px -15px rgba(0, 0, 0, 0.15), inset 15px 15px 10px rgba(255, 255, 255, 0.75), -15px -15px 35px rgba(255, 255, 255, 0.55), inset -2px -2px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15%;
+    position: absolute;
+    left: 62px;
+    bottom: 102px;
+    z-index: -1;
+}
+
+.numbers_inside {
+    position: absolute;
+    top: 30px;
+    width: 180px;
+    height: 180px;
+    background: #152b4a;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 7px 7px 22px #152b4a66, inset 7px 7px 7px rgba(255, 255, 255, 0.55), -9px -9px 15px rgba(255, 255, 255, 1);
+}
+
+
+.numbers_inside::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #dacdd1;
+    z-index: 100000;
+    box-shadow: 0 0 0 1px #ce517b,
+        0 0 0 3px #d562af, 0 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.numbers_inside span {
+    position: absolute;
+    inset: 5px;
+    text-align: center;
+    color: #fff;
+    font-size: .9em;
+    transform: rotate(calc(30deg * var(--i)));
+}
+
+.numbers_inside span b {
+    font-weight: 400;
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+}
+
+.numbers_inside .s_circle {
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    border: 1px solid rgb(200, 227, 148);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+
+}
+
+.numbers_inside .s_circle i {
+    position: absolute;
+    width: 4px;
+    height: 50%;
+    background: var(--clr);
+    opacity: 0.75;
+    transform-origin: bottom;
+    transform: scaleY(.5);
+}
+
+.numbers_inside .s_circle#s_sec i {
+    width: 2px;
+    transform: scaleY(.9);
+}
+
+.numbers_inside .s_circle#s_min i {
+    width: 3px;
+    transform: scaleY(.7);
+}
